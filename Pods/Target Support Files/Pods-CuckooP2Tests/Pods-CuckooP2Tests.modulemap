@@ -1,0 +1,6 @@
+framework module Pods_CuckooP2Tests {
+  umbrella header "Pods-CuckooP2Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

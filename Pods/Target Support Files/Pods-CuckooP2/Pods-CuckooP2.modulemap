@@ -1,0 +1,6 @@
+framework module Pods_CuckooP2 {
+  umbrella header "Pods-CuckooP2-umbrella.h"
+
+  export *
+  module * { export * }
+}
