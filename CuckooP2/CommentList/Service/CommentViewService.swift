@@ -4,6 +4,7 @@
 //
 //  Created by Ubit on 02/07/24.
 //
+// cuckoo: generate
 
 import Foundation
 

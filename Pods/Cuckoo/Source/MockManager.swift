@@ -1,17 +1,23 @@
-#if canImport(XCTest)
+//
+//  MockManager.swift
+//  Cuckoo
+//
+//  Created by Filip Dolnik on 29.05.16.
+//  Copyright © 2016 Brightify. All rights reserved.
+//
+
 import XCTest
+
+#if !swift(>=4.1)
+private extension Array {
+    func compactMap<O>(_ transform: (Element) -> O?) -> [O] {
+        return self.flatMap(transform)
+    }
+}
 #endif
 
 public class MockManager {
-    public static var fail: ((message: String, sourceLocation: SourceLocation)) -> Void = { arg in
-        let (message, sourceLocation) = arg
-        #if canImport(XCTest)
-        XCTFail(message, file: sourceLocation.file, line: sourceLocation.line)
-        #else
-        print("\(Self.self).fail:", message, sourceLocation)
-        #endif
-    }
-
+    public static var fail: ((message: String, sourceLocation: SourceLocation)) -> () = { (arg) in let (message, sourceLocation) = arg; XCTFail(message, file: sourceLocation.file, line: sourceLocation.line) }
     private var stubs: [Stub] = []
     private var stubCalls: [StubCall] = []
     private var unverifiedStubCallsIndexes: [Int] = []
@@ -215,7 +221,7 @@ public class MockManager {
         
         if callMatcher.matches(calls) == false {
             let message = "Wanted \(callMatcher.name) but \(calls.count == 0 ? "not invoked" : "invoked \(calls.count) times")."
-            MockManager.fail((message: message, sourceLocation: sourceLocation))
+            MockManager.fail((message, sourceLocation))
         }
         return __DoNotUse()
     }
@@ -273,15 +279,15 @@ public class MockManager {
                     }
                 }.enumerated().map { "\($0 + 1). " + $1 }.joined(separator: "\n")
             let message = "No more interactions wanted but some found:\n"
-            MockManager.fail((message: message + unverifiedCalls, sourceLocation:  sourceLocation))
+            MockManager.fail((message + unverifiedCalls, sourceLocation))
         }
     }
 
     private func failAndCrash(_ message: String, file: StaticString = #file, line: UInt = #line) -> Never  {
-        MockManager.fail((message: message, sourceLocation: (file, line)))
+        MockManager.fail((message, (file, line)))
 
         #if _runtime(_ObjC)
-        NSException(name: .internalInconsistencyException, reason: message, userInfo: nil).raise()
+            NSException(name: .internalInconsistencyException, reason:message, userInfo: nil).raise()
         #endif
 
         fatalError(message)
@@ -304,6 +310,7 @@ extension MockManager {
         return call(getterName(property), parameters: Void(), escapingParameters: Void(), superclassCall: superclassCall(), defaultCall: defaultCall())
     }
 
+    @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
     public func getter<T>(_ property: String, superclassCall: @autoclosure () async -> T, defaultCall: @autoclosure () async -> T) async -> T {
         return await call(getterName(property), parameters: Void(), escapingParameters: Void(), superclassCall: await superclassCall(), defaultCall: await defaultCall())
     }
@@ -318,6 +325,7 @@ extension MockManager {
         return try callThrows(getterName(property), parameters: Void(), escapingParameters: Void(), superclassCall: try superclassCall(), defaultCall: try defaultCall())
     }
 
+    @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
     public func getterThrows<T>(_ property: String, superclassCall: @autoclosure () async throws -> T, defaultCall: @autoclosure () async throws -> T) async throws -> T {
         return try await callThrows(getterName(property), parameters: Void(), escapingParameters: Void(), superclassCall: try await superclassCall(), defaultCall: try await defaultCall())
     }
@@ -328,6 +336,7 @@ extension MockManager {
         return callInternal(method, parameters: parameters, escapingParameters: escapingParameters, superclassCall: superclassCall, defaultCall: defaultCall)
     }
     
+    @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
     public func call<IN, OUT>(_ method: String, parameters: IN, escapingParameters: IN, superclassCall: @autoclosure () async -> OUT, defaultCall: @autoclosure () async -> OUT) async -> OUT {
         return await callInternal(method, parameters: parameters, escapingParameters: escapingParameters, superclassCall: superclassCall, defaultCall: defaultCall)
     }
@@ -338,6 +347,7 @@ extension MockManager {
         return try callThrowsInternal(method, parameters: parameters, escapingParameters: escapingParameters, superclassCall: superclassCall, defaultCall: defaultCall)
     }
     
+    @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
     public func callThrows<IN, OUT>(_ method: String, parameters: IN, escapingParameters: IN, superclassCall: @autoclosure () async throws -> OUT, defaultCall: @autoclosure () async throws -> OUT) async throws -> OUT {
         return try await callThrowsInternal(method, parameters: parameters, escapingParameters: escapingParameters, superclassCall: superclassCall, defaultCall: defaultCall)
     }

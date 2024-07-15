@@ -1,4 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-CuckooP2/Pods-CuckooP2-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/Cuckoo/Cuckoo.framework
-${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework

@@ -1,3 +1,11 @@
+//
+//  ParameterMatcherFunctions.swift
+//  Cuckoo
+//
+//  Created by Filip Dolnik on 04.07.16.
+//  Copyright © 2016 Brightify. All rights reserved.
+//
+
 /// Returns an equality matcher.
 public func equal<T: Equatable>(to value: T) -> ParameterMatcher<T> {
     return equal(to: value, equalWhen: ==)

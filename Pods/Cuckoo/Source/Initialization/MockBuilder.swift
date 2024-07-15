@@ -1,3 +1,10 @@
+//
+//  MockBuilder.swift
+//  Cuckoo
+//
+//  Created by Tadeas Kriz on 7/6/18.
+//
+
 import Foundation
 
 public class MockBuilder {
