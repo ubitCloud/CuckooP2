@@ -17,7 +17,6 @@
 		8B5615A32C40EF6800A46F56 /* CuckooP2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5615A22C40EF6800A46F56 /* CuckooP2Tests.swift */; };
 		8B5615AD2C40EF6800A46F56 /* CuckooP2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5615AC2C40EF6800A46F56 /* CuckooP2UITests.swift */; };
 		8B5615AF2C40EF6800A46F56 /* CuckooP2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5615AE2C40EF6800A46F56 /* CuckooP2UITestsLaunchTests.swift */; };
-		8BC05EA42C4586EF00D6E15A /* generate_mocks.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8BF5764E2C414B4800DCC6FA /* generate_mocks.sh */; };
 		8BC05EB62C45926D00D6E15A /* CuckooGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC05EB52C45926D00D6E15A /* CuckooGenerated.swift */; };
 		8BD40B402C40F86F008F6440 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD40B3F2C40F86F008F6440 /* APIRouter.swift */; };
 		8BD40B422C40F880008F6440 /* RestAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD40B412C40F880008F6440 /* RestAPIClient.swift */; };
@@ -31,7 +30,6 @@
 		8BD40B562C40F9F9008F6440 /* MockCommentViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD40B552C40F9F9008F6440 /* MockCommentViewService.swift */; };
 		8BD40B5A2C40FDA0008F6440 /* Comments.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BD40B592C40FDA0008F6440 /* Comments.json */; };
 		8BD552CE2C43ACC000DC73A8 /* Cuckoofile.toml in Resources */ = {isa = PBXBuildFile; fileRef = 8BD552CD2C43ACC000DC73A8 /* Cuckoofile.toml */; };
-		8BF5764F2C414B4800DCC6FA /* generate_mocks.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8BF5764E2C414B4800DCC6FA /* generate_mocks.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +78,6 @@
 		8BD40B552C40F9F9008F6440 /* MockCommentViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommentViewService.swift; sourceTree = "<group>"; };
 		8BD40B592C40FDA0008F6440 /* Comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Comments.json; sourceTree = "<group>"; };
 		8BD552CD2C43ACC000DC73A8 /* Cuckoofile.toml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cuckoofile.toml; sourceTree = "<group>"; };
-		8BF5764E2C414B4800DCC6FA /* generate_mocks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generate_mocks.sh; sourceTree = "<group>"; };
 		92C708232EDB6C03237FF676 /* Pods-CuckooP2-CuckooP2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuckooP2-CuckooP2UITests.debug.xcconfig"; path = "Target Support Files/Pods-CuckooP2-CuckooP2UITests/Pods-CuckooP2-CuckooP2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AEA3AAD04CBA46AB7A128227 /* Pods_CuckooP2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuckooP2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97D779F6929E55CAE7E8CA4 /* Pods_CuckooP2_CuckooP2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuckooP2_CuckooP2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				8BD552CD2C43ACC000DC73A8 /* Cuckoofile.toml */,
-				8BF5764E2C414B4800DCC6FA /* generate_mocks.sh */,
 				8B5615902C40EF6600A46F56 /* CuckooP2 */,
 				8B5615A12C40EF6800A46F56 /* CuckooP2Tests */,
 				8B5615AB2C40EF6800A46F56 /* CuckooP2UITests */,
@@ -285,7 +281,7 @@
 			buildConfigurationList = 8B5615B52C40EF6800A46F56 /* Build configuration list for PBXNativeTarget "CuckooP2Tests" */;
 			buildPhases = (
 				FE5F84695E07DD136B0E85EB /* [CP] Check Pods Manifest.lock */,
-				8BD552C82C42FC1900DC73A8 /* Generate Mocks */,
+				8BD552C82C42FC1900DC73A8 /* GenerateMocks */,
 				8B56159A2C40EF6800A46F56 /* Sources */,
 				8B56159C2C40EF6800A46F56 /* Resources */,
 				8B56159B2C40EF6800A46F56 /* Frameworks */,
@@ -370,7 +366,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5615992C40EF6800A46F56 /* Preview Assets.xcassets in Resources */,
-				8BC05EA42C4586EF00D6E15A /* generate_mocks.sh in Resources */,
 				8B5615962C40EF6800A46F56 /* Assets.xcassets in Resources */,
 				8BD552CE2C43ACC000DC73A8 /* Cuckoofile.toml in Resources */,
 			);
@@ -381,7 +376,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BD40B5A2C40FDA0008F6440 /* Comments.json in Resources */,
-				8BF5764F2C414B4800DCC6FA /* generate_mocks.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +445,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CuckooP2-CuckooP2UITests/Pods-CuckooP2-CuckooP2UITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8BD552C82C42FC1900DC73A8 /* Generate Mocks */ = {
+		8BD552C82C42FC1900DC73A8 /* GenerateMocks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -459,15 +453,16 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				/Users/Developer/Downloads/CuckooPractice/CuckooP2/CuckooP2/CommentList/Service/CommentViewService.swift,
 			);
-			name = "Generate Mocks";
+			name = GenerateMocks;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"$GENERATE_TEST_MOCKS\" = \"NO\" ] ; then exit; fi\n\n# Define input and output directories\nINPUT_DIR=\"$SRCROOT/CuckooP2/CuckooP2/CommentList/Service/\"\nOUTPUT_DIR=\"$SRCROOT/CuckooP2Tests/GeneratedMocks\"\nOUTPUT_FILE=\"$OUTPUT_DIR/Mocks.swift\"\n\n# Create the output directory if it doesn't exist\nif [ ! -d \"$OUTPUT_DIR\" ]; then\n    mkdir -p \"$OUTPUT_DIR\"\nfi\n\n# Clean up old mocks\nif [ -f \"$OUTPUT_FILE\" ]; then\n    rm \"$OUTPUT_FILE\"\nfi\n\n# Generate the mocks\n\"$PODS_ROOT/Cuckoo/run\" generate --testable \"CuckooP2\" \\\n    --output \"$OUTPUT_FILE\" \\\n    \"$INPUT_DIR/CommentViewService.swift\"\n";
+			shellScript = "# Skip for indexing\nif [ $ACTION == \"indexbuild\" ]; then\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  exit 0\nfi\n\necho \"PODS_ROOT is set to: $PODS_ROOT\"\n\"${PODS_ROOT}/Cuckoo/run\"\n";
 		};
 		ABDA1191ABA548454313C8C5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
