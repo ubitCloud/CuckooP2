@@ -1,6 +1,6 @@
 output = "./CuckooP2Tests/GeneratedMocks/Mocks.swift"
 
-[modules.MyModule]
+[modules.CuckooP2.xcworkspace]
 testable = true
 files = [
   "./CuckooP2/CommentList/Service/CommentViewService.swift",
