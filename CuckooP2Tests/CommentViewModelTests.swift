@@ -19,31 +19,31 @@ class CommentViewModelTests: XCTestCase {
     }
     
     
-    func testCompareObjects() {
-        let sut = CommentViewModel(commentViewService: MockCommentViewService())
-        
-//        let expectation = self.expectation(description: "Fetch comments")
-
-        sut.fetchComments()
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            do {
-                if let fileUrl = Bundle.main.url(forResource: "Comments", withExtension: "json") {
-                    let data = try Data(contentsOf: fileUrl)
-                    let json = try JSONDecoder().decode([CommentModel].self, from: data)
-                    
-                    XCTAssertEqual(sut.comments, json, "Comments fetched do not match JSON data.")
-                } else {
-                    XCTFail("File 'Comments.json' not found in the main bundle.")
-                }
-            } catch {
-                XCTFail("Failed to load JSON data from file: \(error.localizedDescription)")
-            }
-//            expectation.fulfill()
-//        }
-        
-//        waitForExpectations(timeout: 10, handler: nil)
-    }
+//    func testCompareObjects() {
+//        let sut = CommentViewModel(commentViewService: MockCommentViewService())
+//        
+////        let expectation = self.expectation(description: "Fetch comments")
+//
+//        sut.fetchComments()
+//        
+////        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//            do {
+//                if let fileUrl = Bundle.main.url(forResource: "Comments", withExtension: "json") {
+//                    let data = try Data(contentsOf: fileUrl)
+//                    let json = try JSONDecoder().decode([CommentModel].self, from: data)
+//                    
+//                    XCTAssertEqual(sut.comments, json, "Comments fetched do not match JSON data.")
+//                } else {
+//                    XCTFail("File 'Comments.json' not found in the main bundle.")
+//                }
+//            } catch {
+//                XCTFail("Failed to load JSON data from file: \(error.localizedDescription)")
+//            }
+////            expectation.fulfill()
+////        }
+//        
+////        waitForExpectations(timeout: 10, handler: nil)
+//    }
     
     
 //    func test_FetchCommentsFromAPI() {

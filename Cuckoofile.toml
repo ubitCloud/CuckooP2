@@ -1,8 +1,21 @@
+[modules.Cuckoo]
+imports = ["Foundation"]
+testableImports = ["Cuckoo"]
+sources = [
+    "./CuckooP2/CommentList/Service/*.swift",
+]
+exclude = [
+    "ExcludedTestClass",
+    "ExcludedProtocol",
+]
+# regex = ""
 output = "./CuckooP2Tests/GeneratedMocks/Mocks.swift"
 
-[modules.MyModule]
-testable = true
-files = [
-  "./CuckooP2/CommentList/Service/CommentViewService.swift",
-  # Add other files if needed
-]
+
+[modules.Cuckoo.options]
+glob = true
+keepDocumentation = false
+
+[modules.Cuckoo.xcworkspace]
+path = "Generator"
+target = "Cuckoonator"

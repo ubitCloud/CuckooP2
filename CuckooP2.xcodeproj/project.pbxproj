@@ -17,7 +17,7 @@
 		8B5615A32C40EF6800A46F56 /* CuckooP2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5615A22C40EF6800A46F56 /* CuckooP2Tests.swift */; };
 		8B5615AD2C40EF6800A46F56 /* CuckooP2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5615AC2C40EF6800A46F56 /* CuckooP2UITests.swift */; };
 		8B5615AF2C40EF6800A46F56 /* CuckooP2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5615AE2C40EF6800A46F56 /* CuckooP2UITestsLaunchTests.swift */; };
-		8BC05EB62C45926D00D6E15A /* CuckooGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC05EB52C45926D00D6E15A /* CuckooGenerated.swift */; };
+		8B83FE552C4C283200086626 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83FE542C4C283200086626 /* Mocks.swift */; };
 		8BD40B402C40F86F008F6440 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD40B3F2C40F86F008F6440 /* APIRouter.swift */; };
 		8BD40B422C40F880008F6440 /* RestAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD40B412C40F880008F6440 /* RestAPIClient.swift */; };
 		8BD40B442C40F8EB008F6440 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD40B432C40F8EB008F6440 /* CommentModel.swift */; };
@@ -65,7 +65,7 @@
 		8B5615A82C40EF6800A46F56 /* CuckooP2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CuckooP2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5615AC2C40EF6800A46F56 /* CuckooP2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuckooP2UITests.swift; sourceTree = "<group>"; };
 		8B5615AE2C40EF6800A46F56 /* CuckooP2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuckooP2UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8BC05EB52C45926D00D6E15A /* CuckooGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuckooGenerated.swift; sourceTree = "<group>"; };
+		8B83FE542C4C283200086626 /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		8BD40B3F2C40F86F008F6440 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		8BD40B412C40F880008F6440 /* RestAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIClient.swift; sourceTree = "<group>"; };
 		8BD40B432C40F8EB008F6440 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 		8BF576492C413FD100DCC6FA /* GeneratedMocks */ = {
 			isa = PBXGroup;
 			children = (
-				8BC05EB52C45926D00D6E15A /* CuckooGenerated.swift */,
+				8B83FE542C4C283200086626 /* Mocks.swift */,
 			);
 			path = GeneratedMocks;
 			sourceTree = "<group>";
@@ -453,7 +453,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				/Users/Developer/Downloads/CuckooPractice/CuckooP2/CuckooP2/CommentList/Service/CommentViewService.swift,
 			);
 			name = GenerateMocks;
 			outputFileListPaths = (
@@ -462,7 +461,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Skip for indexing\nif [ $ACTION == \"indexbuild\" ]; then\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  exit 0\nfi\n\necho \"PODS_ROOT is set to: $PODS_ROOT\"\n\"${PODS_ROOT}/Cuckoo/run\"\n";
+			shellScript = "#!/bin/sh\necho \"====== Start ======\"\n# Skip for indexing\nif [ $ACTION == \"indexbuild\" ]; then\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  exit 0\nfi\n\n\"${PODS_ROOT}/Cuckoo/run\" \n";
 		};
 		ABDA1191ABA548454313C8C5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -552,7 +551,7 @@
 				8BD40B562C40F9F9008F6440 /* MockCommentViewService.swift in Sources */,
 				8BD40B522C40F955008F6440 /* CommentViewModelTests.swift in Sources */,
 				8B5615A32C40EF6800A46F56 /* CuckooP2Tests.swift in Sources */,
-				8BC05EB62C45926D00D6E15A /* CuckooGenerated.swift in Sources */,
+				8B83FE552C4C283200086626 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

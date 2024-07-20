@@ -1,12 +1,12 @@
 PODS:
   - Alamofire (5.9.1)
-  - Cuckoo (1.10.4):
-    - Cuckoo/Swift (= 1.10.4)
-  - Cuckoo/Swift (1.10.4)
+  - Cuckoo (2.0.8):
+    - Cuckoo/Swift (= 2.0.8)
+  - Cuckoo/Swift (2.0.8)
 
 DEPENDENCIES:
   - Alamofire (~> 5.9.1)
-  - Cuckoo (~> 1.10.4)
+  - Cuckoo (~> 2.0)
 
 SPEC REPOS:
   trunk:
@@ -15,8 +15,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
-  Cuckoo: 20b8aed94022e0e43e90f7c9e4fb0c86f0926a01
+  Cuckoo: ea063e4bbbd42b1b79325a2b1d915b1c0e6d3578
 
-PODFILE CHECKSUM: c36a37fa1af3c9d905384ffb35900386bb839845
+PODFILE CHECKSUM: 93eefc3fd7d9c6ad16298130c95394d21972d114
 
 COCOAPODS: 1.15.2

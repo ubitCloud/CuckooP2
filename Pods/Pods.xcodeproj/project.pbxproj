@@ -1095,9 +1095,9 @@
 			};
 			name = Release;
 		};
-		52BBBBAD897D5383B60605C11E773C65 /* Debug */ = {
+		5869445197461040DEE25ED65E771178 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEE66F516B76052CA0783005D9800052 /* Cuckoo.debug.xcconfig */;
+			baseConfigurationReference = A958ECC21AFD70CD7BC05FD50BB48E29 /* Cuckoo.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1111,7 +1111,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Cuckoo/Cuckoo-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Cuckoo/Cuckoo-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1125,10 +1125,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		714A038955EDD712335B7293B4D7DAB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1476,9 +1477,9 @@
 			};
 			name = Release;
 		};
-		EDBC072669A86E992C1EF7B8FFB92934 /* Release */ = {
+		EE1E863E12E446F68EB27D3C174820F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A958ECC21AFD70CD7BC05FD50BB48E29 /* Cuckoo.release.xcconfig */;
+			baseConfigurationReference = BEE66F516B76052CA0783005D9800052 /* Cuckoo.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1492,7 +1493,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Cuckoo/Cuckoo-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Cuckoo/Cuckoo-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1506,11 +1507,10 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		F5816036E63D8F77D3E6C20A48D06295 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1573,8 +1573,8 @@
 		3BDFB43FCD45B3DFB8BFDC745D843687 /* Build configuration list for PBXNativeTarget "Cuckoo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52BBBBAD897D5383B60605C11E773C65 /* Debug */,
-				EDBC072669A86E992C1EF7B8FFB92934 /* Release */,
+				EE1E863E12E446F68EB27D3C174820F6 /* Debug */,
+				5869445197461040DEE25ED65E771178 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
